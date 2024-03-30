@@ -12,9 +12,10 @@ import useAxios from '../hooks/useAxios';
 
 const Hero = () => {
     const { data } = useAxios();
-    console.log(data)
+
     // @ts-ignore
-    const userTitle = data?.user?.about?.title
+    const userTitle = data?.user?.about?.title;
+
     return (
         <motion.div
             initial="hidden"
@@ -48,7 +49,8 @@ const Hero = () => {
                     variants={slideInFromLeft(0.8)}
                     className='text-lg text-gray-400 my-5 max-w-[600px]'
                 >
-                    I&apos;m a Full stack Software Engineer with experience in Website <br /> and Software development. Check out my projects and skills
+                   {/* @ts-ignore */}
+                {data?.user?.about?.subTitle}
                 </motion.p>
 
                 <motion.div
@@ -77,4 +79,4 @@ const Hero = () => {
     )
 }
 
-export default Hero
+export default Hero;

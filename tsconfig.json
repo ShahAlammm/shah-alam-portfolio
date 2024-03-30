@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/sections/Hero.tsx", "src/components/hooks/useAxios.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/sections/Hero.tsx", "src/components/hooks/useAxios.jsx", "src/components/sections/Services.tsx"],
   "exclude": ["node_modules"]
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import TanStackProvider from '../provider/TanStackProvider';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,8 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} bg-black/[0.96] bg-grid-white/[0.02] overflow-hidden`}>
+      <body className={`${inter.className} bg-black/[0.96] bg-grid-white/[0.02]`}>
+        <TanStackProvider>
         {children}
+        </TanStackProvider>
       </body>
     </html>
   );
