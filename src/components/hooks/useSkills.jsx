@@ -4,26 +4,25 @@ import { useQuery } from "@tanstack/react-query";
 import useAxios from "./useAxios";
 
 const useSkills = () => {
-  const { data: axiosData } = useAxios();
+    const { data } = useAxios();
 
-  const { refetch, data: skillsArray = [] } = useQuery({
-    queryKey: ["skills"],
-    queryFn: async () => {
-      // Simulate fetching data using axios.get or similar method
-      // Replace this with your actual API call
-      const res = await axiosData.get("/skills");
-      return res.data;
-    },
-  });
+    // Check if data.user exists and contains services
+    const skillsData = data?.user?.skills ?? [];
 
-  // Convert skills array into an object
-  const skillsObject = {};
-  skillsArray.forEach(skill => {
-    if (skill.enabled) {
-      skillsObject[skill.name] = skill;
-    }
-  });
-console.log(skillsObject)
+    // Filter services where enabled is true
+    const filteredSkills = skillsData.filter(service => service.enabled === true);
+
+    console.log(filteredSkills);
+
+    const { refetch, data: skillsObject = filteredSkills } = useQuery({
+      queryKey: ["skills"],
+      queryFn: async () => {
+        const res = await data.get(`/skills`);
+        return res.data;
+      },
+    });
+
+    console.log(skillsObject);
   return [skillsObject, refetch];
 };
 

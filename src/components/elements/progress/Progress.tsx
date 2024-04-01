@@ -1,45 +1,32 @@
-import React from 'react';
-import './progress.css'; // Assuming you have a progress.css file
+"use client"
+import './progress.css';
+import useSkills from '../../hooks/useSkills';
+import Image from 'next/image';
 
-interface ProgressItem {
-  text: string; // Text displayed for the skill
-  value: number; // Percentage value (0-100)
-}
+const Progress = () => {
+  const [skillsObject] = useSkills();
 
-const Progress: React.FC = () => {
-
-  const skills: ProgressItem[] = [
-    { text: 'HTML', value: 85 },
-    { text: 'CSS', value: 57 },
-    { text: 'JS', value: 30 },
-    { text: 'HTML', value: 85 },
-    { text: 'CSS', value: 57 },
-    { text: 'JS', value: 30 },
-  ];
+  const calculateProgress = (percentage:any) => {
+    return Math.round(percentage);
+  };
 
   return (
-    <div className="container">
-      {skills.map((skill) => (
-        <div className="box" key={skill.text}>
-          <div className="shadow"></div>
-          <div className="content">
-            <div
-              className="percent"
-              data-text={skill.text}
-              // @ts-ignore
-              style={{ '--num': skill.value }} // Corrected style prop
-            >
-              <div className="dot"></div>
-              <svg>
-                <circle cx="70" cy="70" r="70"></circle>
-                <circle cx="70" cy="70" r="70"></circle>
-              </svg>
+    <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
+      {Object.keys(skillsObject).map((skillKey) => (
+        <div className="container" key={skillsObject[skillKey]._id}>
+          <div className='flex justify-start items-start'>
+            <div className='flex justify-center items-center p-2 gap-2'>
+              {/* Use 'Image' component for image rendering */}
+              <Image src={skillsObject[skillKey]?.image?.url} height={1000} width={1000} alt='images' className='h-12 w-12' />
+              <p className='text-white text-xl'>{skillsObject[skillKey].name}</p>
             </div>
-            <div className="number">
-              <h2>
-                {skill.value}%<span>%</span>
-              </h2>
+          </div>
+          <div className="progressbar-container">
+            <div className="progressbar-complete" style={{ width: `${calculateProgress(skillsObject[skillKey].percentage)}%` }}>
+              <div className="progressbar-liquid"></div>
             </div>
+            {/* Display the percentage inside the progress bar */}
+            <span className="progress">{calculateProgress(skillsObject[skillKey].percentage)}%</span>
           </div>
         </div>
       ))}
