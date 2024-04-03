@@ -10,7 +10,7 @@ export function Testimonial() {
 
     return (
         <div className="py-12">
-            <SkillText IconText={"Customer Testimonials Section"}/>
+            <SkillText IconText={"Customer Testimonials Section"} Heading={"Reviews Of My Happy Customer"}/>
             <div className="h-[40rem] rounded-md flex flex-col antialiased  items-center justify-center relative overflow-hidden">
                 <InfiniteMovingCards
                     items={testimonials}

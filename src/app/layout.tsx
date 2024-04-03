@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import TanStackProvider from '../provider/TanStackProvider';
 import Navbar from "@/components/sections/Navbar";
+import { Toaster } from "react-hot-toast";
+import StarsCanvas from "@/components/elements/StarBackground";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,6 +24,8 @@ export default function RootLayout({
       <body className={`${inter.className} bg-black/[0.96] bg-grid-white/[0.02]`}>
         <TanStackProvider>
           <Navbar />
+          <Toaster />
+          <StarsCanvas/>
           {children}
         </TanStackProvider>
       </body>

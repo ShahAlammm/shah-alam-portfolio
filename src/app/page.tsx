@@ -1,6 +1,8 @@
 
-
+import Project from "@/components/elements/ProjectCard/Project";
 import About from "@/components/sections/About";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/sections/Footer";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Skills from "@/components/sections/Skills";
@@ -22,7 +24,10 @@ export default function Home() {
           <About />
           <Services />
           <Skills />
-          <Testimonial/>
+          <Project />
+          <Testimonial />
+          <Contact />
+          <Footer />
         </TracingBeam>
       </div>
 

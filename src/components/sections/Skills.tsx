@@ -6,7 +6,7 @@ const Skills = () => {
 
     return (
         <div className="py-12">
-            <SkillText IconText={"Potential Skills On Tech"} Heading={"Expertise with different languages"} SubHeading={""}/>
+            <SkillText IconText={"Potential Skills On Tech"} Heading={"Expertise with different languages"} SubHeading={"Never miss to learn new technology"}/>
             <Progress />
         </div>
     );

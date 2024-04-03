@@ -9,9 +9,9 @@ import { MdCall } from 'react-icons/md';
 const Navbar = () => {
     const [socials] = useSocial()
     const { data } = useAxios()
-    console.log(socials)
+
     return (
-        <div className="navbar fixed z-[1000] px-12">
+        <div className="navbar fixed z-[900] px-12">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -34,7 +34,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {socials?.map((social: any) => (<Link key={social._id} href={social.url} ><Image src={social.image.url} alt={social.platform} height={200} width={200} className='h-7 w-7 md:h-12 md:w-12 p-[2px] md:p-2' /></Link>))}
+                {socials?.map((social: any) => (<Link key={social._id} href={social.url} ><Image src={social.image.url} alt={social.platform} height={200} width={200} className='h-7 w-7 md:h-12 md:w-12 p-[2px] md:p-2 transform hover:scale-125 transition-transform duration-300' /></Link>))}
             </div>
         </div>
     );
