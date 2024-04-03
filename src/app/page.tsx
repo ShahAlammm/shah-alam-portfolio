@@ -17,9 +17,9 @@ export default function Home() {
         fill="white"
       />
       <div className="flex md:items-center md:justify-center antialiased relative overflow-hidden  ">
-        <TracingBeam className="px-6">
+        <TracingBeam className="px-6 z-50">
           <Hero />
-          {/* <About /> */}
+          <About />
           <Services />
           <Skills />
           <Testimonial/>

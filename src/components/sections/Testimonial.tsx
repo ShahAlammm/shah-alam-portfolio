@@ -7,7 +7,6 @@ import SkillText from "../elements/SkillText";
 export function Testimonial() {
 
     const [testimonials] = useTestimonial()
-    console.log(testimonials)
 
     return (
         <div className="py-12">
@@ -16,7 +15,7 @@ export function Testimonial() {
                 <InfiniteMovingCards
                     items={testimonials}
                     direction="right"
-                    speed="slow"
+                    speed="fast"
                 />
             </div>
         </div>

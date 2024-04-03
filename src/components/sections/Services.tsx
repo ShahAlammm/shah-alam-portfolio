@@ -6,7 +6,7 @@ import SkillText from "../elements/SkillText";
 
 const Services = () => {
   const [services] = useServices();
-  console.log(services);
+
   return (
     <div className="py-12">
       <SkillText IconText={"Services Which I Provide"} Heading={'Making apps with modern technologies'} SubHeading={"Never miss a task, deadline or idea"}/>

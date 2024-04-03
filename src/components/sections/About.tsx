@@ -1,36 +1,32 @@
 "use client"
 
-import { slideInFromLeft } from "@/utils/motion";
-import { motion } from 'framer-motion';
-import { SparklesIcon } from "@heroicons/react/24/solid";
-import { Lamp } from "../ui/lamp";
+import ProfileImage from '../elements/ProfileImage/ProfileImage';
+import SkillText from "../elements/SkillText";
+import { TextGenerate } from '../elements/Text/TextGenerate';
+import useAxios from '../hooks/useAxios';
 
 
 
 
 const About = () => {
+    const { data } = useAxios()
+
+
     return (
-        <div>
-            {/* <Skills /> */}
+        <div className="py-24">
+            <SkillText IconText={"Services Which I Provide"} Heading={'Making apps with modern technologies'} SubHeading={"Never miss a task, deadline or idea"} />
             <div className="hero-content flex-col-reverse xl:flex-row">
-                <div className="w-full lg:w-1/2">
-                    <Lamp />
+                <div className="flex-1 space-y-10">
+                    <ProfileImage />
                 </div>
 
-                <div className="flex-1">
-                    <motion.div
-                        variants={slideInFromLeft(0.8)}
-                        className='Welcome-box py-[10px] px-[7px] border border-[#7042f88b] opacity-[0.9]'
-                    >
-                        <SparklesIcon className='text-[#b49bff] mr-[2px] h-7 w-10' />
-                        <h1 className="Welcome-text text-[13px]">Just Know About My Self</h1>
-                    </motion.div>
-                    {/* <TextRevealCardPreview />
-                    <TextLoop />
-                    <TextGenerate /> */}
-                </div>
 
+                <div className="flex-1 z-50">
+
+
+                </div>
             </div>
+                <TextGenerate />
         </div>
     );
 };
