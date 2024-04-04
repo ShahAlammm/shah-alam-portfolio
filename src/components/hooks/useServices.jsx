@@ -11,7 +11,7 @@ const useServices = () => {
     // Filter services where enabled is true
     const filteredServices = servicesData.filter(service => service.enabled === true);
 
-    console.log(filteredServices);
+
 
     const { refetch, data: services = filteredServices } = useQuery({
       queryKey: ["service"],
@@ -21,7 +21,7 @@ const useServices = () => {
       },
     });
 
-    console.log(services);
+ 
 
     return [services, refetch];
   };

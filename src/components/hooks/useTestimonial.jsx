@@ -12,7 +12,7 @@ const useTestimonial = () => {
     // Filter services where enabled is true
     const AllTestimonials = testimonialsData.filter(service => service.enabled === true);
 
-    console.log(AllTestimonials);
+
 
     const { refetch, data: testimonials = AllTestimonials } = useQuery({
       queryKey: ["testimonials"],
@@ -22,7 +22,7 @@ const useTestimonial = () => {
       },
     });
 
-    console.log(testimonials);
+    
   return [testimonials, refetch];
 };
 

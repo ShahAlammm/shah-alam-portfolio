@@ -1,5 +1,6 @@
 
 import Project from "@/components/elements/ProjectCard/Project";
+import Timeline from "@/components/sections/Timeline";
 import About from "@/components/sections/About";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
@@ -25,6 +26,7 @@ export default function Home() {
           <Services />
           <Skills />
           <Project />
+          <Timeline/>
           <Testimonial />
           <Contact />
           <Footer />

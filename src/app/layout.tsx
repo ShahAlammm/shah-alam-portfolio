@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import StarsCanvas from "@/components/elements/StarBackground";
 
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

@@ -12,7 +12,7 @@ const useSkills = () => {
     // Filter services where enabled is true
     const filteredSkills = skillsData.filter(service => service.enabled === true);
 
-    console.log(filteredSkills);
+
 
     const { refetch, data: skillsObject = filteredSkills } = useQuery({
       queryKey: ["skills"],
@@ -22,7 +22,7 @@ const useSkills = () => {
       },
     });
 
-    console.log(skillsObject);
+    
   return [skillsObject, refetch];
 };
 

@@ -12,7 +12,7 @@ const useSocial = () => {
     // Filter services where enabled is true
     const socialHandle = socialData.filter(service => service.enabled === true);
 
-    console.log(socialHandle);
+
 
     const { refetch, data: socials = socialHandle } = useQuery({
       queryKey: ["social_handles"],
@@ -22,7 +22,7 @@ const useSocial = () => {
       },
     });
 
-    console.log(socials);
+  
   return [socials, refetch];
 };
 

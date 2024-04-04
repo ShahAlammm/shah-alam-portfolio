@@ -49,7 +49,9 @@ const Contact = () => {
     };
 
     return (
-        <div className="m-auto py-16">
+        <div className="m-auto py-16"
+        id="contact"
+        >
             <SkillText IconText={"Contact Me If Needed"} />
             <div className="lg:flex gap-10 py-2 w-full">
                 <div className="w-full">
@@ -102,7 +104,7 @@ const Contact = () => {
                     </form>
                 </div>
                 <div
-                    className="bg-[#0D0D21] p-5 rounded-md w-2/5"
+                    className="bg-[#0D0D21] p-5 rounded-md lg:w-2/5"
                 >
                     <h2 className="text-2xl font-bold text-purple-800">Contact Me : </h2>
                     <p className="text-sm text-justify py-5">

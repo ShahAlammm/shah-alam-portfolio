@@ -7,7 +7,7 @@ const useAxios = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-console.log(data)
+
 
   useEffect(() => {
     const fetchData = async () => {

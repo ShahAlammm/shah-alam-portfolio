@@ -12,7 +12,7 @@ const useProject = () => {
     // Filter services where enabled is true
     const filteredProject = projectData.filter(project => project.enabled === true);
 
-    console.log(filteredProject);
+
 
     const { refetch, data: projects = filteredProject } = useQuery({
       queryKey: ["projects"],
@@ -22,7 +22,7 @@ const useProject = () => {
       },
     });
 
-    console.log(projects);
+   
 
     return [projects, refetch];
 };
