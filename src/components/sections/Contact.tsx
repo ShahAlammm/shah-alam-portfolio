@@ -32,10 +32,10 @@ const Contact = () => {
 
         emailjs
             .sendForm(
-                "service_qy37urq",
-                "template_jgak3f8",
+                "service_walfvvk",
+                "template_48cx9x4",
                 form.current,
-                "hYHFNWwDDEM1kwFWE"
+                "7PLMishgZkYzVusaP"
             )
             .then(
                 (result) => {
@@ -104,7 +104,7 @@ const Contact = () => {
                     </form>
                 </div>
                 <div
-                    className="bg-[#0D0D21] p-5 rounded-md lg:w-2/5"
+                    className="bg-[#0D0D21] p-5 rounded-md lg:w-3/5 xl:w-2/5"
                 >
                     <h2 className="text-2xl font-bold text-purple-800">Contact Me : </h2>
                     <p className="text-sm text-justify py-5">

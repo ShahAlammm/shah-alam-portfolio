@@ -20,7 +20,7 @@ export default function Home() {
         fill="white"
       />
       <div className="flex md:items-center md:justify-center antialiased relative overflow-hidden  ">
-        <TracingBeam className="px-6 z-50">
+        <div className="relative w-full max-w-4xl xl:max-w-7xl  mx-auto h-full px-6 z-50">
           <Hero />
           <About />
           <Services />
@@ -30,7 +30,7 @@ export default function Home() {
           <Testimonial />
           <Contact />
           <Footer />
-        </TracingBeam>
+        </div>
       </div>
 
 

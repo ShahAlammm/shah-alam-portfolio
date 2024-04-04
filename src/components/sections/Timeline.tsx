@@ -1,11 +1,55 @@
+"use client"
 import React from 'react';
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+import useTimeline from '../hooks/useTimeline'; // Assuming useTimeline fetches timeline data
+
+import Image from 'next/image';
+import SkillText from '../elements/SkillText';
+
 
 const Timeline = () => {
-  return (
-    <div>
+  const [timelines] = useTimeline();
 
+
+  return (
+    <div className='py-16 space-y-7'>
+      <SkillText IconText={"Education & Experience"} Heading={"Educational qualification & Experiences"}/>
+      <VerticalTimeline>
+        {timelines && timelines.map((timeline: any) => (
+          <VerticalTimelineElement
+            className='text-white '
+            visible
+            key={timeline._id}
+            date={`${new Date(timeline.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}-
+          ${new Date(timeline.endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`}
+            icon={timeline.icon ? (
+              <Image
+
+                className='h-10 w-10  rounded-full'
+
+                src={"https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706289470834-siro83"}
+                alt="Company Icon"
+                layout="fill" // Adjust layout as needed (e.g., "fill", "intrinsic")
+                onError={(error) => {
+                  console.error('Image loading error:', error);
+                  // Optionally set a fallback image source here
+                }}
+              />
+            ) : null}
+          >
+            <h3 className="vertical-timeline-element-title text-black font-bold">Position: {timeline.jobTitle}</h3>
+            <h4 className="vertical-timeline-element-subtitle text-black font-semibold">Company: {timeline.company_name}</h4>
+            <h4 className="vertical-timeline-element-subtitle text-black">Job Location: {timeline.jobLocation}</h4>
+            <p className='text-black italic'>{timeline.summary}</p>
+            <ul>
+              {timeline.bulletPoints.map((point: any, index: any) => (
+                <li className='text-black pt-2' key={index}>{index + 1}.{point}</li>
+              ))}
+            </ul>
+          </VerticalTimelineElement>
+        ))}
+      </VerticalTimeline>
     </div>
   );
 };

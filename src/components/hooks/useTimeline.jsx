@@ -13,7 +13,7 @@ const useTimeline = () => {
 
 
 
-    const { refetch, data: Timelines = AllTimeline } = useQuery({
+    const { refetch, data: timelines = AllTimeline } = useQuery({
       queryKey: ["timeline"],
       queryFn: async () => {
         const res = await data.get(`/timeline`);
@@ -22,6 +22,6 @@ const useTimeline = () => {
     });
 
 
-  return [Timelines, refetch];
+  return [timelines, refetch];
 };
 export default useTimeline;
