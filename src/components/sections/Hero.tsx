@@ -5,7 +5,8 @@ import { SparklesIcon } from '@heroicons/react/24/solid'
 import Image from 'next/image';
 import image from '../../../public/mainIconsdark.svg';
 import useAxios from '../hooks/useAxios';
-// import { MovingBorder } from '@/utils/Button/MovingButton';
+import { MovingBorder } from '../elements/MovingBorder';
+
 
 
 
@@ -57,7 +58,7 @@ const Hero = () => {
                     variants={slideInFromLeft(1)}
                     className=' z-40'
                 >
-                    {/* <MovingBorder /> */}
+                    <MovingBorder />
                 </motion.div>
             </div>
 

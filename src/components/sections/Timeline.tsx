@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import useTimeline from '../hooks/useTimeline'; // Assuming useTimeline fetches timeline data
@@ -7,14 +7,20 @@ import useTimeline from '../hooks/useTimeline'; // Assuming useTimeline fetches 
 import Image from 'next/image';
 import SkillText from '../elements/SkillText';
 
-
 const Timeline = () => {
-  const [timelines] = useTimeline();
+  const [useClient, setUseClient] = useState(false);
+  const [educationTimeline, experienceTimeline,] = useTimeline();
 
+  const handleUseClient = () => {
+    setUseClient(!useClient);
+  };
+
+  const timelines = useClient ? experienceTimeline : educationTimeline;
 
   return (
     <div className='py-16 space-y-7'>
-      <SkillText IconText={"Education & Experience"} Heading={"Educational qualification & Experiences"}/>
+
+      <SkillText IconText={"Education & Experience"} Heading={"Educational qualification & Experiences"} />
       <VerticalTimeline>
         {timelines && timelines.map((timeline: any) => (
           <VerticalTimelineElement
@@ -25,9 +31,7 @@ const Timeline = () => {
           ${new Date(timeline.endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`}
             icon={timeline.icon ? (
               <Image
-
                 className='h-10 w-10  rounded-full'
-
                 src={"https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706289470834-siro83"}
                 alt="Company Icon"
                 layout="fill" // Adjust layout as needed (e.g., "fill", "intrinsic")
@@ -50,6 +54,11 @@ const Timeline = () => {
           </VerticalTimelineElement>
         ))}
       </VerticalTimeline>
+      <div className="flex justify-center items-center pt-10">
+        <button onClick={handleUseClient} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          {timelines === educationTimeline ? "Experience" : "Education"}
+        </button>
+      </div>
     </div>
   );
 };

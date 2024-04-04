@@ -1,5 +1,4 @@
 "use client"
-import { useQuery } from '@tanstack/react-query';
 import useAxios from './useAxios';
 
 const useTimeline = () => {
@@ -9,19 +8,11 @@ const useTimeline = () => {
     const TimelineData = data?.user?.timeline ?? [];
 
     // Filter services where enabled is true
-    const AllTimeline = TimelineData.filter(service => service.enabled === true);
+    const EducationTimeline = TimelineData.filter(service => service.forEducation === true);
+    const ExperienceTimeline = TimelineData.filter(service => service.forEducation === false);
 
 
-
-    const { refetch, data: timelines = AllTimeline } = useQuery({
-      queryKey: ["timeline"],
-      queryFn: async () => {
-        const res = await data.get(`/timeline`);
-        return res.data;
-      },
-    });
-
-
-  return [timelines, refetch];
+    return [EducationTimeline, ExperienceTimeline,];
 };
+
 export default useTimeline;
