@@ -1,31 +1,28 @@
 "use client";
 import Image from "next/image";
 import "./Image.css";
-import useAxios from "../../hooks/useAxios";
+import myImage from '../../../../public/myImage.JPG';
+
 
 const ProfileImage = () => {
-  const { data } = useAxios();
 
-  const alternateAvatars = data?.user?.about?.alternateAvatars || [];
-  
+
   return (
     <div>
       <div class="gallery">
         <Image
-          src={data?.user?.about?.avatar?.url}
+          src={myImage}
           height={500}
           width={500}
           alt="Archer"
         />
-        {alternateAvatars.map((avatar, index) => (
           <Image
-            key={index}
-            src={avatar.url}
+          
+            src={myImage}
             height={500}
             width={500}
-            alt={`Alternate Avatar ${index + 1}`}
+            alt={`Alternate Avatar `}
           />
-        ))}
       </div>
     </div>
   );

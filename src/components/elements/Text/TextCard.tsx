@@ -10,9 +10,9 @@ export function TextCard() {
         <div className="flex items-center justify-start h-[20rem] rounded-2xl w-full">
             <TextRevealCard
                 //   @ts-ignore
-                text={`${data?.user?.about?.title}`}
+                text={`Hi This Is Shah Alam`}
                 //   @ts-ignore
-                revealText={`${data?.user?.about?.quote}`}
+                revealText={`A Full-Stack Developer`}
             >
 
             </TextRevealCard>

@@ -1,13 +1,7 @@
 "use client"
 import emailjs from "@emailjs/browser";
 import {
-    FaFacebook,
-    FaGithub,
-    FaInstagram,
-    FaLinkedinIn,
-    FaTwitter,
     FaPhoneAlt,
-    FaMobile,
 } from "react-icons/fa";
 import { MdMarkEmailRead } from "react-icons/md";
 import Link from "next/link";
@@ -107,25 +101,23 @@ const Contact = () => {
                     className="bg-[#0D0D21] p-5 rounded-md lg:w-3/5 xl:w-2/5"
                 >
                     <h2 className="text-2xl font-bold text-purple-800">Contact Me : </h2>
-                    <p className="text-sm text-justify py-5">
-                        {/* @ts-ignore */}
-                        {data?.user?.about?.address}
+                    <p className="text-lg font-bold text-justify py-5">
+                        ID, USA
                     </p>
 
-                    <p className="flex items-center mt-8 text-sm hover:text-blue-700 hover:underline">
+                    <p className="flex items-center mt-4 text-sm hover:text-blue-700 hover:underline">
                         <span className="font-bold mr-2 text-2xl text-blue-700">
                             <MdMarkEmailRead></MdMarkEmailRead>{" "}
                         </span>{" "}
-                        {/* @ts-ignore */}
-                        {data?.user?.about?.contactEmail}
+                        shahalam.md131200@gmail.com
 
                     </p>
                     <p className="flex items-center py-3 text-sm hover:text-blue-700 hover:underline">
                         <span className="font-bold mr-2 text-2xl text-green-600">
                             <FaPhoneAlt></FaPhoneAlt>{" "}
                         </span>{" "}
-                         {/* @ts-ignore */}
-                         {data?.user?.about?.phoneNumber}
+                        +1 (986) 6009505
+                         
                     </p>
 
                     <div className="flex space-x-7 pt-10">

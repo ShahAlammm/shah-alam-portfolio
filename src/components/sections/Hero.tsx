@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { SparklesIcon } from '@heroicons/react/24/solid'
 import Image from 'next/image';
 import image from '../../../public/mainIconsdark.svg';
-import useAxios from '../hooks/useAxios';
+
 import { MovingBorder } from '../elements/MovingBorder';
 
 
@@ -12,10 +12,10 @@ import { MovingBorder } from '../elements/MovingBorder';
 
 
 const Hero = () => {
-    const { data } = useAxios();
+ 
 
     // @ts-ignore
-    const userTitle = data?.user?.about?.title;
+   
 
     return (
         <motion.div
@@ -31,7 +31,7 @@ const Hero = () => {
                     className='Welcome-box py-[10px] px-[7px] border border-[#7042f88b] opacity-[0.9]'
                 >
                     <SparklesIcon className='text-[#b49bff] mr-[10px] h-5 w-5' />
-                    <h1 className="Welcome-text text-[16px]">{userTitle} Portfolio</h1>
+                    <h1 className="Welcome-text text-[16px]">Full-Stack Developer Portfolio</h1>
                 </motion.div>
                 <motion.div
                     variants={slideInFromLeft(0.5)}
@@ -48,10 +48,10 @@ const Hero = () => {
                 </motion.div>
                 <motion.p
                     variants={slideInFromLeft(0.8)}
-                    className='text-lg text-gray-400 my-5 max-w-[600px]'
+                    className='text-lg text-gray-200 my-5 max-w-[600px] cursive'
                 >
                    {/* @ts-ignore */}
-                {data?.user?.about?.subTitle}
+                   I Develop visuals, user interfaces and web Applications.
                 </motion.p>
 
                 <motion.div

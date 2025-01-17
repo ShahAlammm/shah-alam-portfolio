@@ -8,7 +8,7 @@ import * as random from "maath/random/dist/maath-random.esm";
 const StarBackground = (props) => {
     const ref = useRef();
     const [sphere] = useState(() =>
-        random.inSphere(new Float32Array(800), { radius: 1.2 })
+        random.inSphere(new Float32Array(3000), { radius: 1.2 })
     );
 
     useFrame((state, delta) => {

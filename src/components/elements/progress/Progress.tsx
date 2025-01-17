@@ -4,9 +4,11 @@ import './progress.css';
 import useSkills from '../../hooks/useSkills';
 import Image from 'next/image';
 
+
+
 const Progress = () => {
   const [activePage, setActivePage] = useState(1);
-  const [skillsObject] = useSkills();
+  const [skillsObject] = useSkills()
   const [currentPage, setCurrentPage] = useState(1);
   const skillsPerPage = 6;
 

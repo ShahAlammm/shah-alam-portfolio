@@ -9,7 +9,6 @@ import Services from "@/components/sections/Services";
 import Skills from "@/components/sections/Skills";
 import { Testimonial } from "@/components/sections/Testimonial";
 import { Spotlight } from "@/components/ui/Spotlight";
-import { TracingBeam } from "@/components/ui/tracing-beam";
 
 
 export default function Home() {
@@ -26,8 +25,8 @@ export default function Home() {
           <Services />
           <Skills />
           <Project />
-          <Timeline/>
-          <Testimonial />
+          {/* <Timeline/> */}
+          {/* <Testimonial /> */}
           <Contact />
           <Footer />
         </div>
