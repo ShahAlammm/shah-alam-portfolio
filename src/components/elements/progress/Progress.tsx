@@ -49,7 +49,7 @@ const Progress = () => {
         <button className={`btn rounded-full hover:bg-blue-600 ${activePage === 1 ? 'bg-blue-600' : ''}`} onClick={() => paginate(1)}>1</button>
         <button className={`btn rounded-full hover:bg-blue-600 ${activePage === 2 ? 'bg-blue-600' : ''}`} onClick={() => paginate(2)}>2</button>
         <button className={`btn rounded-full hover:bg-blue-600 ${activePage === 3 ? 'bg-blue-600' : ''}`} onClick={() => paginate(3)}>3</button>
-        <button className={`btn rounded-full hover:bg-blue-600 ${activePage === 4 ? 'bg-blue-600' : ''}`} onClick={() => paginate(4)}>4</button>
+        {/* <button className={`btn rounded-full hover:bg-blue-600 ${activePage === 4 ? 'bg-blue-600' : ''}`} onClick={() => paginate(4)}>4</button> */}
       </div>
     </div>
   );

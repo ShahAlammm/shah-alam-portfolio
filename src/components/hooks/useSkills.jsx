@@ -114,7 +114,7 @@ const skills = [
   {
     enabled: true,
     name: "MongoDB",
-    sequence: 13,
+    sequence: 9,
     percentage: 70,
     image: {
       public_id: "1706286966065-p2yrx9",
@@ -126,12 +126,14 @@ const skills = [
   {
     enabled: true,
     name: "Three.js",
-    sequence: 9,
+    sequence: 19,
     percentage: 40,
     image: {
       public_id: "1706286941212-chpzl",
-      url: "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706286941212-chpzl",
+      // url: "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706286966065-p2yrx9",
       _id: "65b3df5db48589dfcae18189",
+      // url: "https://i.ibb.co/ZRdyR3Hs/1706286941212-chpzl.png",
+      url: "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706286941212-chpzl",
     },
     _id: "65b3df5db48589dfcae18188",
   },
